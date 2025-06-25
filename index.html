@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAGDAMBA TOURS & TRAVELS KOPAR KHAIRANE NAVI MUMBAI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #f4f6fb;
+      color: #222;
+      margin-bottom: 70px; /* for bottom nav */
+    }
+    .container {
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    .navbar {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      border-radius: 0 0 1.5rem 1.5rem;
+      background: #fff;
+      color: #1e3c72 !important;
+    }
+    .navbar .navbar-brand, .navbar .navbar-brand span, .navbar .navbar-brand span span {
+      color: #1e3c72 !important;
+    }
+    .navbar .navbar-toggler {
+      border: none;
+      background: rgba(255,255,255,0.15);
+    }
+    .navbar .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(30,60,114,0.8)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    .navbar .navbar-brand img {
+      background: #fff;
+    }
+    /* Mobile menu dropdown style */
+    @media (max-width: 767px) {
+      #mobileNavMenu.collapse.show {
+        background: #fff;
+        border-radius: 1.2rem;
+        box-shadow: 0 8px 32px rgba(30,60,114,0.13);
+        margin: 0.5rem 0.5rem 0 0.5rem;
+        padding: 0.5rem 0 0.5rem 0;
+      }
+      #mobileNavMenu .navbar-nav {
+        gap: 0.5rem;
+      }
+      #mobileNavMenu .nav-link {
+        color: #1e3c72 !important;
+        font-weight: 600;
+        border-radius: 0.7rem;
+        margin: 0.2rem 1rem;
+        background: #f4f6fb;
+        box-shadow: 0 2px 8px rgba(30,60,114,0.04);
+        transition: background 0.2s, color 0.2s;
+      }
+      #mobileNavMenu .nav-link:hover, #mobileNavMenu .nav-link:focus {
+        background: #2a5298;
+        color: #fff !important;
+      }
+    }
+    .hero {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 0 0 2rem 2rem;
+    }
+    .hero-bg, .hero-bg2 {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-bg {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      opacity: 0.25;
+      animation: fadeIn 2s;
+    }
+    .hero-bg2 {
+      background: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80') right/cover no-repeat;
+      opacity: 0.12;
+      mix-blend-mode: lighten;
+      animation: fadeIn 2.5s 0.5s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem 1rem 1rem;
+      background: rgba(30,60,114,0.7);
+      border-radius: 2rem;
+      box-shadow: 0 8px 32px rgba(30,60,114,0.2);
+      animation: fadeInDown 1.2s;
+      margin: 1rem auto 0 auto;
+      max-width: 420px;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-car-img {
+      width: 90%;
+      max-width: 320px;
+      margin: 0 auto 1.5rem auto;
+      display: block;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 24px rgba(30,60,114,0.13);
+      border: 4px solid #fff;
+      background: #fff;
+      object-fit: cover;
+      animation: fadeIn 1.5s 0.5s;
+    }
+    .btn-cta {
+      font-size: 1rem;
+      border-radius: 2rem;
+      box-shadow: 0 2px 8px rgba(42,82,152,0.2);
+      transition: background 0.2s, transform 0.2s;
+      font-weight: 700;
+      margin-top: 1rem;
+    }
+    .btn-cta:hover {
+      background: #ffc107;
+      color: #222;
+      transform: scale(1.05);
+    }
+    .section-title {
+      font-weight: 700;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      color: #1e3c72;
+      letter-spacing: 1px;
+    }
+    .card, .service-card, .fleet-card, .testimonial-card, .pricing-card {
+      border-radius: 1.5rem !important;
+      box-shadow: 0 4px 24px rgba(30,60,114,0.07);
+      border: none;
+    }
+    .service-card, .fleet-card {
+      background: #fff;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    .service-card:hover, .fleet-card:hover {
+      transform: translateY(-6px) scale(1.04) rotate(-1deg);
+      box-shadow: 0 8px 32px rgba(30,60,114,0.13);
+    }
+    .service-img, .fleet-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 1.5rem 1.5rem 0 0;
+      margin-bottom: 0.5rem;
+      transition: filter 0.2s, transform 0.3s cubic-bezier(.68,-0.55,.27,1.55);
+      background: #fff;
+    }
+    .service-card:hover .service-img, .fleet-card:hover .fleet-img {
+      filter: brightness(1.1) saturate(1.2);
+      transform: scale(1.07) rotate(1deg);
+    }
+    .service-card .fa, .fleet-card .fa {
+      font-size: 2rem;
+      color: #2a5298;
+      margin-bottom: 0.5rem;
+      animation: bounceIn 1s;
+    }
+    @keyframes bounceIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+    .badge-feature {
+      background: #2a5298;
+      color: #fff;
+      font-size: 0.85rem;
+      border-radius: 0.5rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.3rem;
+    }
+    .driver-section {
+      background: linear-gradient(120deg, #2a5298 0%, #1e3c72 100%);
+      color: #fff;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 24px rgba(30,60,114,0.09);
+      padding: 2.5rem 1.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .driver-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+      opacity: 0.08;
+      z-index: 0;
+    }
+    .driver-section .row { position: relative; z-index: 1; }
+    .driver-icon {
+      font-size: 2rem;
+      color: #ffc107;
+      margin-bottom: 0.5rem;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+    .testimonial-card {
+      background: #fff;
+      padding: 2rem 1.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.5rem;
+    }
+    .testimonial-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 3px solid #ffc107;
+      box-shadow: 0 2px 8px rgba(30,60,114,0.13);
+      transition: transform 0.2s;
+    }
+    .testimonial-card:hover .testimonial-img {
+      transform: scale(1.1) rotate(-3deg);
+    }
+    .testimonial-quote {
+      font-size: 1.1rem;
+      color: #2a5298;
+      font-style: italic;
+      position: relative;
+    }
+    .testimonial-quote:before {
+      content: '\201C';
+      font-size: 2rem;
+      color: #ffc107;
+      position: absolute;
+      left: -1.2rem;
+      top: -0.5rem;
+    }
+    .footer {
+      background: #1e3c72;
+      color: #fff;
+      padding: 2rem 0 1rem 0;
+      border-radius: 2rem 2rem 0 0;
+    }
+    .footer a {
+      color: #ffc107;
+      text-decoration: none;
+    }
+    .map-responsive {
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
+      height: 0;
+      border-radius: 1.5rem;
+    }
+    .map-responsive iframe {
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      border:0;
+      border-radius: 1.5rem;
+    }
+    /* Bottom mobile nav */
+    .mobile-bottom-nav {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      background: #fff;
+      box-shadow: 0 -2px 16px rgba(30,60,114,0.09);
+      border-radius: 1.5rem 1.5rem 0 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 64px;
+      padding: 0 1rem;
+    }
+    .mobile-bottom-nav a {
+      color: #2a5298;
+      font-size: 1.5rem;
+      text-align: center;
+      flex: 1;
+      transition: color 0.2s;
+      padding: 0.5rem 0;
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .mobile-bottom-nav a.active, .mobile-bottom-nav a:active, .mobile-bottom-nav a:hover {
+      color: #ffc107;
+      background: #f4f6fb;
+    }
+    @media (min-width: 768px) {
+      .mobile-bottom-nav { display: none; }
+      .hero-content { max-width: 600px; }
+      .service-img, .fleet-img { height: 180px; }
+      .pricing-card {
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2.5rem 2rem !important;
+        box-shadow: 0 8px 32px rgba(30,60,114,0.13);
+      }
+      #fareForm .form-control, #fareForm .form-select {
+        min-width: 0;
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+      #fareForm .btn {
+        font-size: 1.1rem;
+        padding: 0.75rem 2rem;
+      }
+      #fareResult {
+        font-size: 1.15rem;
+        margin-top: 1rem;
+      }
+    }
+    @media (max-width: 767px) {
+      .footer { font-size: 0.95rem; }
+      .section-title { font-size: 1.3rem; }
+      .hero-content { padding: 1.2rem 0.5rem; }
+    }
+    @media (min-width: 992px) {
+      .hero {
+        min-height: 70vh;
+      }
+      .hero-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1000px;
+        padding: 3rem 3rem;
+        background: rgba(30,60,114,0.7);
+      }
+      .hero-car-img {
+        max-width: 400px;
+        margin: 0 2rem 0 0;
+      }
+      .hero-content-text {
+        flex: 1;
+        text-align: left;
+      }
+      .d-flex.flex-row.gap-3.mt-3.mb-2 {
+        justify-content: flex-start !important;
+      }
+      .service-card, .fleet-card, .testimonial-card {
+        min-height: 340px;
+      }
+      .row.g-3, .row.g-4 {
+        row-gap: 2.5rem;
+      }
+      .py-4, .py-5 {
+        padding-top: 3.5rem !important;
+        padding-bottom: 3.5rem !important;
+      }
+    }
+    @media (min-width: 992px) {
+      #services .row.g-3 > div,
+      #fleet .row.g-3 > div,
+      #testimonials .row.g-3 > div {
+        flex: 0 0 32%;
+        max-width: 32%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Desktop Navbar (visible on md and up) -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top d-none d-md-flex" style="border-radius:0 0 1.5rem 1.5rem;box-shadow:0 2px 8px rgba(30,60,114,0.07);padding:0.7rem 2rem;">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="logo.png" alt="Logo" style="height:52px;width:auto;border-radius:14px;box-shadow:0 2px 8px rgba(30,60,114,0.13);background:#fff;margin-right:16px;">
+        <span class="lh-sm">
+          <span class="fw-bold text-primary" style="font-size:1.25rem;">JAGDAMBA TOURS & TRAVELS KOPAR KHAIRANE NAVI MUMBAI</span><br>
+          <span style="font-size:1rem;color:#444;font-weight:400;">जगदम्बा टूर्स & ट्रैवल्स कोपर खैरने नवी मुंबई</span>
+        </span>
+      </a>
+      <div class="collapse navbar-collapse show justify-content-end">
+        <ul class="navbar-nav align-items-center gap-2">
+          <li class="nav-item"><a class="nav-link" href="#home"><i class="fa-solid fa-house me-1"></i>Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services"><i class="fa-solid fa-list me-1"></i>Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#fleet"><i class="fa-solid fa-car me-1"></i>Fleet</a></li>
+          <li class="nav-item"><a class="nav-link" href="#drivers"><i class="fa-solid fa-user-tie me-1"></i>Drivers</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pricing"><i class="fa-solid fa-indian-rupee-sign me-1"></i>Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq"><i class="fa-solid fa-circle-question me-1"></i>FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact"><i class="fa-solid fa-phone me-1"></i>Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Top Navigation -->
+  <nav class="navbar navbar-light bg-white sticky-top" style="border-radius:0 0 1.5rem 1.5rem;box-shadow:0 2px 8px rgba(30,60,114,0.07);padding:0.5rem 1rem;">
+    <div class="d-flex align-items-center justify-content-between w-100">
+      <img src="logo.png" alt="Logo" style="height:44px;width:auto;border-radius:12px;box-shadow:0 2px 8px rgba(30,60,114,0.13);background:#fff;">
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNavMenu" aria-controls="mobileNavMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="text-center mt-2 mb-1">
+      <div class="fw-bold text-primary" style="font-size:1.05rem;letter-spacing:1px;line-height:1.2;">
+        JAGDAMBA TOURS & TRAVELS KOPAR KHAIRANE NAVI MUMBAI<br>
+        <span style="font-size:0.95rem;color:#444;font-weight:400;">जगदम्बा टूर्स & ट्रैवल्स कोपर खैरने नवी मुंबई</span>
+      </div>
+    </div>
+    <div class="collapse" id="mobileNavMenu">
+      <ul class="navbar-nav text-center pb-2">
+        <li class="nav-item"><a class="nav-link py-2" href="#home"><i class="fa-solid fa-house me-1"></i>Home</a></li>
+        <li class="nav-item"><a class="nav-link py-2" href="#services"><i class="fa-solid fa-list me-1"></i>Services</a></li>
+        <li class="nav-item"><a class="nav-link py-2" href="#fleet"><i class="fa-solid fa-car me-1"></i>Fleet</a></li>
+        <li class="nav-item"><a class="nav-link py-2" href="#drivers"><i class="fa-solid fa-user-tie me-1"></i>Drivers</a></li>
+        <li class="nav-item"><a class="nav-link py-2" href="#pricing"><i class="fa-solid fa-indian-rupee-sign me-1"></i>Pricing</a></li>
+        <li class="nav-item"><a class="nav-link py-2" href="#faq"><i class="fa-solid fa-circle-question me-1"></i>FAQ</a></li>
+        <li class="nav-item"><a class="nav-link py-2" href="#contact"><i class="fa-solid fa-phone me-1"></i>Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-bg2"></div>
+    <div class="container hero-content">
+      <img src="ertiga.png" alt="Jagdamba Tours Car" class="hero-car-img">
+      <div class="hero-content-text">
+        <h1 class="display-4 fw-bold mb-3">Ride in Comfort & Style</h1>
+        <p class="lead mb-4">Premium cab services for every journey. Safe, reliable, and always on time.</p>
+        <div class="d-flex flex-row justify-content-center align-items-center gap-3 mt-3 mb-2">
+          <a href="#contact" class="btn btn-warning btn-cta shadow flex-fill"><i class="fa-solid fa-calendar-check me-2"></i>Book a Ride</a>
+          <a href="https://wa.me/919970859699?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20cab%20services." target="_blank" class="btn btn-success btn-cta shadow flex-fill"><i class="fa-brands fa-whatsapp me-2"></i>Enquiry</a>
+        </div>
+        <div class="mt-3 d-flex flex-wrap justify-content-center gap-2">
+          <span class="badge bg-light text-primary fs-6"><i class="fa-solid fa-clock me-1"></i>24/7 Service</span>
+          <span class="badge bg-light text-primary fs-6"><i class="fa-solid fa-user-shield me-1"></i>Professional Drivers</span>
+          <span class="badge bg-light text-primary fs-6"><i class="fa-solid fa-bolt me-1"></i>Instant Booking</span>
+          <span class="badge bg-light text-primary fs-6"><i class="fa-solid fa-car-side me-1"></i>Clean & Sanitized Cars</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-4" id="services">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Our Services</h2>
+        <p class="mb-4">Choose from a wide range of cab services tailored to your needs.</p>
+      </div>
+      <div class="row g-3">
+        <div class="col-12 col-md-4">
+          <div class="card service-card text-center p-3 h-100">
+            <img src="city.jpg" alt="City Rides" class="service-img">
+            <i class="fa-solid fa-city"></i>
+            <h5 class="fw-bold mt-2">City Rides</h5>
+            <p>Quick, safe, and affordable rides within the city limits. Book instantly and travel with ease.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card service-card text-center p-3 h-100">
+            <img src="airport.jpg" alt="Airport Transfers" class="service-img">
+            <i class="fa-solid fa-plane-departure"></i>
+            <h5 class="fw-bold mt-2">Airport Transfers</h5>
+            <p>On-time pick-up and drop-off to all major airports. Flight tracking and meet & greet available.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card service-card text-center p-3 h-100">
+            <img src="outstation.jpg" alt="Outstation Trips" class="service-img">
+            <i class="fa-solid fa-route"></i>
+            <h5 class="fw-bold mt-2">Outstation Trips</h5>
+            <p>Comfortable long-distance rides for your outstation journeys. Flexible packages and stops.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fleet Showcase -->
+  <section class="py-4 bg-light" id="fleet">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Our Fleet</h2>
+        <p class="mb-4">Choose from a variety of vehicles to suit your comfort and style.</p>
+      </div>
+      <div class="row g-3">
+        <div class="col-12 col-md-4">
+          <div class="fleet-card">
+            <img src="sedan.png" class="fleet-img" alt="Sedan">
+            <div class="p-3">
+              <h5 class="fw-bold"><i class="fa-solid fa-car-side me-2"></i>Sedan</h5>
+              <span class="badge badge-feature"><i class="fa-solid fa-snowflake me-1"></i>AC</span>
+              <span class="badge badge-feature"><i class="fa-solid fa-users me-1"></i>4 Seats</span>
+              <span class="badge badge-feature"><i class="fa-solid fa-suitcase-rolling me-1"></i>Luggage</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="fleet-card">
+            <img src="ertiga.png" class="fleet-img" alt="SUV">
+            <div class="p-3">
+              <h5 class="fw-bold"><i class="fa-solid fa-car me-2"></i>SUV</h5>
+              <span class="badge badge-feature"><i class="fa-solid fa-snowflake me-1"></i>AC</span>
+              <span class="badge badge-feature"><i class="fa-solid fa-users me-1"></i>6 Seats</span>
+              <span class="badge badge-feature"><i class="fa-solid fa-expand me-1"></i>Spacious</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Driver & Safety Section -->
+  <section class="py-4" id="drivers">
+    <div class="container">
+      <div class="driver-section text-center">
+        <h2 class="section-title text-white">Professional Drivers & Safety</h2>
+        <p class="mb-4">Our drivers are background-checked, trained, and dedicated to your safety and comfort. All vehicles are sanitized before every ride.</p>
+        <div class="row justify-content-center">
+          <div class="col-6 col-md-3 mb-3">
+            <i class="fa-solid fa-user-tie driver-icon"></i>
+            <img src="https://randomuser.me/api/portraits/men/45.jpg" class="testimonial-img" alt="Driver 1">
+            <div>John Doe</div>
+            <small>10+ Years Experience</small>
+          </div>
+          <div class="col-6 col-md-3 mb-3">
+            <i class="fa-solid fa-user-shield driver-icon"></i>
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" class="testimonial-img" alt="Driver 2">
+            <div>Jane Smith</div>
+            <small>Certified & Verified</small>
+          </div>
+          <div class="col-6 col-md-3 mb-3">
+            <i class="fa-solid fa-user-nurse driver-icon"></i>
+            <img src="https://randomuser.me/api/portraits/men/33.jpg" class="testimonial-img" alt="Driver 3">
+            <div>Mike Lee</div>
+            <small>Defensive Driving Expert</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing/Fare Estimator Section -->
+  <section class="py-4" id="pricing">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Pricing & Fare Estimator</h2>
+        <p class="mb-4">Transparent and affordable pricing for every ride. Use our fare estimator below (dummy).</p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+          <div class="card pricing-card p-4">
+            <form id="fareForm">
+              <div class="row g-3 align-items-end">
+                <div class="col-md-6">
+                  <label class="form-label"><i class="fa-solid fa-location-dot me-1"></i>Pickup Location</label>
+                  <input type="text" class="form-control" placeholder="Enter pickup">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label"><i class="fa-solid fa-location-dot me-1"></i>Drop Location</label>
+                  <input type="text" class="form-control" placeholder="Enter drop">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label"><i class="fa-solid fa-car me-1"></i>Car Type</label>
+                  <select class="form-select" name="carType" id="carType">
+                    <option value="Sedan">Sedan</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Luxury">Luxury</option>
+                    <option value="Hatchback">Hatchback</option>
+                    <option value="Minivan">Minivan</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label"><i class="fa-solid fa-ruler-horizontal me-1"></i>Distance (km)</label>
+                  <input type="number" class="form-control" placeholder="e.g. 12" name="distance" id="distance">
+                </div>
+                <div class="col-12 text-center mt-3">
+                  <button type="button" class="btn btn-primary btn-cta w-100" id="estimateFareBtn"><i class="fa-solid fa-calculator me-2"></i>Estimate Fare</button>
+                </div>
+                <div class="col-12 text-center mt-3">
+                  <div class="alert alert-info mb-0" id="fareResult">Estimated Fare: <strong>₹0</strong></div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-4 bg-light faq-section" id="faq">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+      <div class="accordion mt-3" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+              <i class="fa-solid fa-question-circle me-2"></i>How do I book a cab?
+            </button>
+          </h2>
+          <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              You can book a cab instantly using our website or by calling our 24/7 helpline.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+              <i class="fa-solid fa-user-shield me-2"></i>Are your drivers background checked?
+            </button>
+          </h2>
+          <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes, all our drivers are thoroughly background checked and professionally trained.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+              <i class="fa-solid fa-calendar-check me-2"></i>Can I schedule a ride in advance?
+            </button>
+          </h2>
+          <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Absolutely! You can schedule your ride in advance through our booking form or by phone.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq4">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+              <i class="fa-solid fa-shield-virus me-2"></i>What safety measures do you follow?
+            </button>
+          </h2>
+          <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              All vehicles are sanitized before every ride, and our drivers follow strict hygiene protocols.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-4" id="testimonials">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">What Our Customers Say</h2>
+      </div>
+      <div class="row g-3 justify-content-center mt-2">
+        <div class="col-12 col-md-4">
+          <div class="testimonial-card text-center">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer 1" class="testimonial-img mx-auto">
+            <h6 class="fw-bold">Amit Sharma</h6>
+            <small class="text-muted"><i class="fa-solid fa-briefcase me-1"></i>Businessman</small>
+            <p class="testimonial-quote mt-3 mb-0">"Always on time and the drivers are very professional. Highly recommended!"</p>
+            <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3b41?auto=format&fit=crop&w=400&q=80" alt="Testimonial Ride" class="service-img mt-3">
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="testimonial-card text-center">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer 2" class="testimonial-img mx-auto">
+            <h6 class="fw-bold">Priya Verma</h6>
+            <small class="text-muted"><i class="fa-solid fa-graduation-cap me-1"></i>Student</small>
+            <p class="testimonial-quote mt-3 mb-0">"The booking process is so easy and the cars are always clean. Great service!"</p>
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Testimonial Ride" class="service-img mt-3">
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="testimonial-card text-center">
+            <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Customer 3" class="testimonial-img mx-auto">
+            <h6 class="fw-bold">Rahul Singh</h6>
+            <small class="text-muted"><i class="fa-solid fa-laptop-code me-1"></i>IT Professional</small>
+            <p class="testimonial-quote mt-3 mb-0">"I use them for all my airport transfers. Never had a single issue!"</p>
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Testimonial Ride" class="service-img mt-3">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-4 bg-light" id="contact">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h2 class="fw-bold mb-4"><i class="fa-solid fa-calendar-check me-2"></i>Book Your Ride</h2>
+              <form id="bookingForm">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="tel" class="form-control" placeholder="Phone Number" name="phone" required>
+                  </div>
+                  <div class="col-12">
+                    <input type="text" class="form-control" placeholder="Pickup Location" name="pickup" required>
+                  </div>
+                  <div class="col-12">
+                    <input type="text" class="form-control" placeholder="Drop Location" name="drop" required>
+                  </div>
+                  <div class="col-12">
+                    <input type="datetime-local" class="form-control" name="datetime" required>
+                  </div>
+                  <div class="col-12 text-end">
+                    <button type="submit" class="btn btn-primary btn-cta w-100"><i class="fa-solid fa-paper-plane me-2"></i>Book Now</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="fw-bold mb-3"><i class="fa-solid fa-address-book me-2"></i>Contact Information</h5>
+              <p class="mb-2"><strong><i class="fa-solid fa-phone me-1"></i>Phone:</strong> 9970859699</p>
+              <p class="mb-2"><strong><i class="fa-solid fa-envelope me-1"></i>Email:</strong> jagdambatoursandtravel3332@gamil.cam</p>
+              <p class="mb-2"><strong><i class="fa-solid fa-location-dot me-1"></i>Address:</strong> Sec 8 Kopar Khairane Vashi Navi Mumbai, near Ganesh Mandir, Navi Mumbai, Maharashtra 400709</p>
+              <div class="map-responsive mt-3">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.140221509057!2d73.0073898!3d19.1015035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c1ad4359e3d5%3A0xca7bbdacdb917e89!2sJAGDAMBA%20TOURS%20%26%20TRAVELS%20KOPAR%20KHAIRANE%20NAVI%20MUMBAI!5e0!3m2!1sen!2sin!4v1750858378136!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="mb-2">
+        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="#" class="me-3"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+      </div>
+      <p class="mb-1">&copy; 2024 JAGDAMBA TOURS & TRAVELS KOPAR KHAIRANE NAVI MUMBAI</p>
+      <small>Designed for demonstration purposes.</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  // WhatsApp booking form integration
+  const bookingForm = document.getElementById('bookingForm');
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = bookingForm.elements['name'].value;
+      const phone = bookingForm.elements['phone'].value;
+      const pickup = bookingForm.elements['pickup'].value;
+      const drop = bookingForm.elements['drop'].value;
+      const datetime = bookingForm.elements['datetime'].value;
+      const msg = `Booking Enquiry:%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0APickup: ${encodeURIComponent(pickup)}%0ADrop: ${encodeURIComponent(drop)}%0ADate & Time: ${encodeURIComponent(datetime)}`;
+      const waUrl = `https://wa.me/919970859699?text=${msg}`;
+      window.open(waUrl, '_blank');
+    });
+  }
+  // Fare Estimator
+  const fareRates = {
+    'Sedan': 10,
+    'SUV': 14,
+    'Luxury': 20,
+    'Hatchback': 9,
+    'Minivan': 16
+  };
+  const estimateFareBtn = document.getElementById('estimateFareBtn');
+  const fareResult = document.getElementById('fareResult');
+  if (estimateFareBtn && fareResult) {
+    estimateFareBtn.addEventListener('click', function() {
+      const carType = document.getElementById('carType').value;
+      const distance = parseFloat(document.getElementById('distance').value);
+      if (!distance || distance <= 0) {
+        fareResult.innerHTML = 'Please enter a valid distance.';
+        return;
+      }
+      const rate = fareRates[carType] || 0;
+      const fare = Math.round(rate * distance);
+      fareResult.innerHTML = `Estimated Fare: <strong>₹${fare}</strong>`;
+    });
+  }
+  </script>
+</body>
+</html> 
